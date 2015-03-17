@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding=UTF-8
 
+# ONLY FO MAC!
+# COPY THIS FILE TO /usr/local/bin/batcharge.py TO ENABLE IT IN THE THEME
+
 import math, subprocess
 
 p = subprocess.Popen(["ioreg", "-rc", "AppleSmartBattery"], stdout=subprocess.PIPE)

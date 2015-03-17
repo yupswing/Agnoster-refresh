@@ -1,24 +1,55 @@
-## Agnoster Refresh
+# yupgnoster
+Antigen ZSH Theme
 
-### Overview
-This is my terminal setup runing [zsh](https://github.com/robbyrussell/oh-my-zsh) with a custom [Agnoster](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/agnoster.zsh-theme) theme in [iTerm 2](http://www.iterm2.com/)
 
-![Screeenshot](https://raw.githubusercontent.com/fusion94/Agnoster-refresh/master/Agnoster-refresh-zsh.png)
+**Based on Agnoster-refresh**<br/>
+https://github.com/fusion94/Agnoster-refresh<br/>
+**Which was based on Agnoster**<br/>
+https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/agnoster.zsh-theme
 
-### Terminal Application Tweaks
+<img src="https://dl.dropboxusercontent.com/u/683344/git/yupgnoster.JPG" width="100%">
 
-Here are the customizations:
-* Font: 11pt [Droid Sans Mono](https://github.com/fusion94/Agnoster-refresh/blob/master/fonts/DroidSansMono.ttf)
-* Theme: This is the terminal theme - [Solarized Dark](https://github.com/fusion94/Agnoster-refresh/blob/master/iterm2%20theme/SolarizedDark.itermcolors)
-* Cursor: #d13a82
+What you need
+----
+1. You need to have Antigen installed to use this theme
+Check it out here https://github.com/zsh-users/antigen
 
-### Shell Tweaks
-This makes use of a battery capacity script from stevelosh.com’s blog: batcharge.py.
+2. You need also to have a Powerline Font (SauceCodePro is provided in the fonts directory) installed on your machine and set your terminal to use it
+You can find a lot more here https://github.com/powerline/fonts
 
-There is also an online indicator, green for active connection, and red for not.  It’s done by a cronjob touching or removing a file to indicate status every minute, and the file is checked by the prompt: online-check.sh.
+3. Finally you can use a terminal color scheme: I am using SolarizeDark, you can find this scheme for different terminals here https://github.com/altercation/solarized
+ 
+Antigen use
+----
+Just run this command or put in your .zshrc to make it your default theme
+````
+antigen theme https://github.com/yupswing/yupgnoster.git yupgnoster
+````
 
-### License
-Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+Extra features
+----
 
-### Credits
-This terminal was based off the work of the following [Blog Post](http://remysharp.com/2013/07/25/my-terminal-setup/) by Remy Sharp
+**Battery**<br/>
+**ONLY MAC** If you want to show battery charge run this command<br/>
+````
+sudo cp script/battery-check/batcharge.py /usr/local/bin/
+````
+
+To disable it just run <br/>
+````
+sudo rm /usr/local/bin/batcharge.py
+````
+
+**Internet connection**<br/>
+If you want to show internet connectivity (red/green dot) run this command (for Mac, in Linux just create a cronjob with 60 seconds interval)<br/>
+````
+sudo cp script/online-check/online-check.sh /usr/local/bin/online-check.sh &&
+sudo cp script/online-check/com.akifox.yupgnoster.online-check.plist ~/Library/LaunchAgents &&
+launchctl load -w ~/Library/LaunchAgents/com.akifox.yupgnoster.online-check.plist
+````
+
+To disable it just run<br/>
+````
+launchctl unload -w ~/Library/LaunchAgents/com.akifox.yupgnoster.online-check.plist &&
+sudo rm ~/Library/LaunchAgents/com.akifox.yupgnoster.online-check.plist
+````
