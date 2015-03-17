@@ -13,9 +13,6 @@
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR=''
 
-ONLINE='%{%F{green}%}⦿'
-OFFLINE='%{%F{red}%}⦿'
-
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
@@ -50,9 +47,13 @@ prompt_end() {
 prompt_context() {
   #local user=`whoami`
   #echo $DEFAULT_USER
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
-  fi
+  if [[ -n "$SSH_CLIENT" ]]; then;
+      prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
+  else;
+    if [[ "$USER" != "$DEFAULT_USER" ]]; then;
+      prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+    fi;
+  fi;
 }
 
 # Git: branch/detached head, dirty status
@@ -147,13 +148,17 @@ prompt_virtualenv() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✕"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}#"
+  [[ $UID -ne 0 ]] && symbols+="%{%F{yellow}%}$"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+
+ONLINE='%{%F{green}%}⦿'
+OFFLINE='%{%F{red}%}⦿'
 
 function prompt_online() {
   if [[ -f ~/.offline ]]; then
