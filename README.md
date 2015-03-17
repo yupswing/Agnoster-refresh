@@ -1,7 +1,6 @@
 # yupgnoster
 Antigen ZSH Theme
 
-
 **Based on Agnoster-refresh**<br/>
 https://github.com/fusion94/Agnoster-refresh<br/>
 **Which was based on Agnoster**<br/>
@@ -9,8 +8,11 @@ https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/agnoster.zsh-theme
 
 <img src="https://dl.dropboxusercontent.com/u/683344/git/yupgnoster.JPG" width="100%">
 
-What you need
-----
+### License
+Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+## What you need
+
 1. You need to have Antigen installed to use this theme
 Check it out here https://github.com/zsh-users/antigen
 
@@ -19,17 +21,15 @@ You can find a lot more here https://github.com/powerline/fonts
 
 3. Finally you can use a terminal color scheme: I am using SolarizeDark, you can find this scheme for different terminals here https://github.com/altercation/solarized
  
-Antigen use
-----
+## Antigen use
 Just run this command or put in your .zshrc to make it your default theme
 ````
 antigen theme https://github.com/yupswing/yupgnoster.git yupgnoster
 ````
 
-Extra features
-----
+## Extra features
 
-**Battery**<br/>
+#### Battery
 **ONLY MAC** If you want to show battery charge run this command<br/>
 ````
 sudo cp script/battery-check/batcharge.py /usr/local/bin/
@@ -40,7 +40,7 @@ To disable it just run <br/>
 sudo rm /usr/local/bin/batcharge.py
 ````
 
-**Internet connection**<br/>
+#### Internet connection<br/>
 If you want to show internet connectivity (red/green dot) run this command (for Mac, in Linux just create a cronjob with 60 seconds interval)<br/>
 ````
 sudo cp script/online-check/online-check.sh /usr/local/bin/online-check.sh &&
