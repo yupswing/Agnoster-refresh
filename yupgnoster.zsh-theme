@@ -161,15 +161,17 @@ ONLINE='%{%F{green}%}⦿'
 OFFLINE='%{%F{red}%}⦿'
 
 function prompt_online() {
-  if [[ -f ~/.offline ]]; then
+  if [[ -f /usr/local/bin/online-check.py ]]; then;
+  if [[ -f ~/.offline ]]; then;
     echo $OFFLINE
-  else
+  else;
     echo $ONLINE
-  fi
+  fi;
+  fi;
 }
 
 function battery_charge {
-  if [ -f /usr/local/bin/batcharge.py ];
+  if [[ -f /usr/local/bin/batcharge.py ]];
   then;
     /usr/local/bin/batcharge.py
   fi;
