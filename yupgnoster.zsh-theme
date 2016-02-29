@@ -147,13 +147,13 @@ prompt_virtualenv() {
 # - am I root
 # - are there background jobs?
 prompt_status() {
+  [[ $RETVAL -ne 0 ]] && prompt_segment red white "✕"
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✕"
+  #[[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✕"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}#"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{red}%}#"
   [[ $UID -ne 0 ]] && symbols+="%{%F{yellow}%}$"
-
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
@@ -182,8 +182,8 @@ function battery_charge {
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_virtualenv
   prompt_context
+  prompt_virtualenv
   prompt_git
   prompt_hg
   prompt_dir
