@@ -12,6 +12,7 @@
 
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR=''
+VIRTUAL_ENV_DISABLE_PROMPT=false # Disable virtualenv in PS1 and use it in yupgnoster
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
