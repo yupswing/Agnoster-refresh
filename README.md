@@ -6,7 +6,7 @@ https://github.com/fusion94/Agnoster-refresh<br/>
 **Which was based on Agnoster**<br/>
 https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/agnoster.zsh-theme
 
-<img src="https://dl.dropboxusercontent.com/u/683344/git/yupgnoster.JPG" width="100%">
+<img src="yupgnoster.jpg" width="100%">
 
 ### License
 Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
