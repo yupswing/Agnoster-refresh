@@ -14,6 +14,10 @@ CURRENT_BG='NONE'
 SEGMENT_SEPARATOR=''
 VIRTUAL_ENV_DISABLE_PROMPT=false # Disable virtualenv in PS1 and use it in yupgnoster
 
+# for parse_git_dirty()
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_DIRTY="dirty"
+
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
@@ -66,9 +70,9 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
-    else
       prompt_segment green black
+    else
+      prompt_segment yellow black
     fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then

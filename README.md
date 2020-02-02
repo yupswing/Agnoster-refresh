@@ -6,14 +6,14 @@ https://github.com/fusion94/Agnoster-refresh<br/>
 **Which was based on Agnoster**<br/>
 https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/agnoster.zsh-theme
 
-<img src="yupgnoster.JPG" width="100%">
+<img src="yupgnoster.jpg" width="100%">
 
 ### License
 Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ## What you need
 
-1. You need to have Antigen or zplug installed to use this theme (see below)
+1. You need to have Antigen or zplug installed with `git` plugin (to use this theme see below)
 
 2. You need also to have a Powerline Font (SauceCodePro is provided in the fonts directory) installed on your machine and set your terminal to use it
 You can find a lot more here https://github.com/powerline/fonts
@@ -24,7 +24,6 @@ You can find a lot more here https://github.com/powerline/fonts
 ## zplug use
 Run this command in your .zshrc
 ```
-zplug "plugins/git-prompt", from:oh-my-zsh
 zplug "yupswing/yupgnoster", as:theme
 ```
 
@@ -33,8 +32,6 @@ Run this command or put in your .zshrc
 ```
 antigen theme https://github.com/yupswing/yupgnoster.git yupgnoster
 ```
-
-Also, you have to install `git-prompt`
 
 
 ## Extra features
