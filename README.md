@@ -13,7 +13,7 @@ Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Inte
 
 ## What you need
 
-1. You need to have Antigen or zplug installed with `git` plugin (to use this theme see below)
+1. You need to have Antigen or zplug installed (to use this theme see below)
 
 2. You need also to have a Powerline Font (SauceCodePro is provided in the fonts directory) installed on your machine and set your terminal to use it
 You can find a lot more here https://github.com/powerline/fonts
