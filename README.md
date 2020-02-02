@@ -13,19 +13,29 @@ Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Inte
 
 ## What you need
 
-1. You need to have Antigen installed to use this theme
-Check it out here https://github.com/zsh-users/antigen
+1. You need to have Antigen or zplug installed to use this theme (see below)
 
 2. You need also to have a Powerline Font (SauceCodePro is provided in the fonts directory) installed on your machine and set your terminal to use it
 You can find a lot more here https://github.com/powerline/fonts
 
 3. Finally you can use a terminal color scheme: I am using SolarizeDark, you can find this scheme for different terminals here https://github.com/altercation/solarized
  
+
+## zplug use
+Run this command in your .zshrc
+```
+zplug "plugins/git-prompt", from:oh-my-zsh
+zplug "yupswing/yupgnoster", as:theme
+```
+
 ## Antigen use
-Just run this command or put in your .zshrc to make it your default theme
-````
+Run this command or put in your .zshrc 
+```
 antigen theme https://github.com/yupswing/yupgnoster.git yupgnoster
-````
+```
+
+Also, you have to install `git-prompt`
+
 
 ## Extra features
 
