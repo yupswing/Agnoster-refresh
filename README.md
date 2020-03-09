@@ -1,3 +1,9 @@
+# NOTE
+
+I've migrated from `yupgnoster` to [`PowerLevel10k`](https://github.com/romkatv/powerlevel10k), which offers so many amazing features.
+
+Here's my configuration if you are curious: [`p10k.zsh`](https://github.com/yupswing/dotfiles/blob/master/dotfiles/zsh/zshlib/p10k.zsh)
+
 # yupgnoster
 Antigen ZSH Theme
 
